@@ -1,0 +1,116 @@
+// import
+@use "./commons/reset";
+@use "./commons/mixins" as *;
+@use "./commons/variables" as *;
+
+@font-face {
+  font-family: "x8y12pxTheStrongGamer";
+  src: url("../font/x8y12pxTheStrongGamer.ttf");
+}
+
+/* ==============================
+Layout
+============================== */
+main {
+  min-height: calc(100vh - $headerHeight - $footerHeigth);
+}
+.ly_inner {
+  width: 768px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ly_content {
+  padding: 30px 40px 60px;
+}
+
+/* ==============================
+Modules
+============================== */
+.logo {
+  width: 120px;
+  transition: opacity 0.2s;
+  @include hover {
+    opacity: 0.6;
+  }
+}
+
+.page-heading {
+  font-size: 2.4rem;
+}
+
+/* アコーディオンメニュー */
+.accordion {
+  overflow: hidden; // アニメーションが不自然にならないようにするために必須
+  user-select: none; // 連打して検証しているときに選択されると邪魔なので、別にコピペされたくないわけではない
+  &_heading {
+    padding: 0.5em 1em;
+    border: 2px dashed $text;
+    cursor: pointer;
+    display: block; // summary要素のデフォルト三角マークを消す
+    &::-webkit-details-marker {
+      display: none; // iOS版Safariの三角マークも消す
+    }
+  }
+  &_content {
+    padding: 0.5em 1em;
+  }
+}
+
+/* ==============================
+body
+============================== */
+body {
+  font-family: "x8y12pxTheStrongGamer", sans-serif;
+  color: $text;
+  font-size: 2.2rem;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+
+/* ==============================
+main
+============================== */
+main {
+  margin-top: 30px;
+}
+
+/* ==============================
+header
+============================== */
+.header {
+  padding: 0 40px;
+  &_inner {
+    height: $headerHeight;
+    display: grid;
+    place-items: center;
+  }
+}
+
+/* ==============================
+footer
+============================== */
+.footer {
+  padding: 0 40px;
+  font-size: 2rem;
+  &_inner {
+    height: $footerHeigth;
+    display: grid;
+    place-items: center;
+  }
+}
+
+/* ==============================
+contents
+============================== */
+.contents {
+  .section-heading {
+    margin-top: 30px;
+  }
+  .items {
+    margin-top: 10px;
+  }
+  .item + .item {
+    margin-top: 10px;
+  }
+}

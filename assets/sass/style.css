@@ -1,0 +1,177 @@
+@charset "UTF-8";
+/* ==============================
+Reset Styles
+============================== */
+/* ボックスモデル */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* フォント */
+html {
+  /* ベースフォントサイズを変更(10px = 1rem) */
+  font-size: 62.5%;
+}
+
+/* 見出し */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font: inherit;
+}
+
+/* リスト */
+ul,
+ol {
+  list-style: none;
+}
+
+/* リンク */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* フォーム */
+input,
+textarea,
+select,
+option {
+  font: inherit;
+  outline: none;
+  border: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+/* 画像とSVG */
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+@font-face {
+  font-family: "x8y12pxTheStrongGamer";
+  src: url("../font/x8y12pxTheStrongGamer.ttf");
+}
+/* ==============================
+Layout
+============================== */
+main {
+  min-height: calc(100vh - 80px - 40px);
+}
+
+.ly_inner {
+  width: 768px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ly_content {
+  padding: 30px 40px 60px;
+}
+
+/* ==============================
+Modules
+============================== */
+.logo {
+  width: 120px;
+  transition: opacity 0.2s;
+}
+@media (hover: hover) {
+  .logo:hover {
+    opacity: 0.6;
+  }
+}
+
+.page-heading {
+  font-size: 2.4rem;
+}
+
+/* アコーディオンメニュー */
+.accordion {
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.accordion_heading {
+  padding: 0.5em 1em;
+  border: 2px dashed #222;
+  cursor: pointer;
+  display: block;
+}
+.accordion_heading::-webkit-details-marker {
+  display: none;
+}
+.accordion_content {
+  padding: 0.5em 1em;
+}
+
+/* ==============================
+body
+============================== */
+body {
+  font-family: "x8y12pxTheStrongGamer", sans-serif;
+  color: #222;
+  font-size: 2.2rem;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+
+/* ==============================
+main
+============================== */
+main {
+  margin-top: 30px;
+}
+
+/* ==============================
+header
+============================== */
+.header {
+  padding: 0 40px;
+}
+.header_inner {
+  height: 80px;
+  display: grid;
+  place-items: center;
+}
+
+/* ==============================
+footer
+============================== */
+.footer {
+  padding: 0 40px;
+  font-size: 2rem;
+}
+.footer_inner {
+  height: 40px;
+  display: grid;
+  place-items: center;
+}
+
+/* ==============================
+contents
+============================== */
+.contents .section-heading {
+  margin-top: 30px;
+}
+.contents .items {
+  margin-top: 10px;
+}
+.contents .item + .item {
+  margin-top: 10px;
+}
+/*# sourceMappingURL=style.css.map */

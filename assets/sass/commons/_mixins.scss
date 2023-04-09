@@ -1,0 +1,19 @@
+// ==============================
+// Mixins
+// ==============================
+
+// hover
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+// メディアクエリ
+@mixin mq($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}

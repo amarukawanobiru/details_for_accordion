@@ -1,0 +1,73 @@
+/* ==============================
+Reset Styles
+============================== */
+
+/* ボックスモデル */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* フォント */
+html {
+  /* ベースフォントサイズを変更(10px = 1rem) */
+  font-size: 62.5%;
+}
+
+/* 見出し */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font: inherit;
+  // chatgptによると非推奨
+  // リセットスタイルをあてることで、その意味や構造を失ってしまうことがある。
+  // そのため個別にスタイルを指定して上書きするか、共通のスタイルを適用する親要素を作成して、その親要素にスタイルを指定する方法が一般的であるとしている。
+}
+
+/* リスト */
+ul,
+ol {
+  list-style: none;
+}
+
+/* リンク */
+a {
+  color: inherit;
+  text-decoration: none;
+  //
+  // 1. a要素がボタンのような振る舞いをする場合
+  //    a要素をボタンのように扱う場合や自己完結型の要素とし場合は、dsiplay:blockが適切である。
+  //
+  // 2. a要素がインラインリンクである場合
+  //    a要素を単なるテキストリンクとして扱う場合は、display:inlineが適切である。
+  //
+  // 3. a要素が画像と併用される場合
+  //    a要素に画像を含めて画像をクリックした場合にリンク先に遷移する場合、display:inline-blockが適切である。
+  //    display:inline-blockは、行内要素として扱われつつも、幅や高さを指定できるため、a要素と画像を縦横両方の方向で中央揃えすることができる。
+  //
+}
+
+/* フォーム */
+input,
+textarea,
+select,
+option {
+  font: inherit;
+  outline: none;
+  border: none;
+  appearance: none;
+}
+
+/* 画像とSVG */
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
