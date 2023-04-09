@@ -84,9 +84,7 @@ class Unwrapit {
   toggleDetails() {
     for (let [i, len] = [0, this.detailsElements.length]; i < len; i++) {
       if (this.detailsElements[i].open) {
-        const content = this.detailsElements[i].querySelector(
-          ".accordion_content-outer"
-        );
+        const content = this.summaryElements[i].nextElementSibling;
         this.closeDetails(content, this.detailsElements[i]);
         break;
       }
